@@ -30,11 +30,53 @@ wx/bitmap.h
 string
 -
 
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatgui.cpp
+wx/filename.h
+-
+wx/colour.h
+-
+wx/image.h
+-
+string
+-
+chatbot.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatbot.h
+chatlogic.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatlogic.h
+chatgui.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatgui.h
+memory
+-
+
 /Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatgui.h
 memory
 -
 wx/wx.h
 -
+
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatlogic.cpp
+fstream
+-
+sstream
+-
+iostream
+-
+vector
+-
+iterator
+-
+tuple
+-
+algorithm
+-
+graphedge.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/graphedge.h
+graphnode.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/graphnode.h
+chatbot.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatbot.h
+chatlogic.h
+/Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatlogic.h
 
 /Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatlogic.h
 vector
@@ -43,6 +85,8 @@ string
 -
 chatgui.h
 /Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/chatgui.h
+memory
+-
 
 /Users/raulpac/Desktop/C++ Projects/CppND-Memory-Management-Chatbot/src/graphedge.h
 vector
