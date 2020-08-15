@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include "chatbot.h"
+#include <memory>
 
 
 // forward declarations
