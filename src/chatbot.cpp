@@ -25,12 +25,12 @@ ChatBot::ChatBot(std::string filename)
     // invalidate data handles
     _chatLogic = nullptr;
     _rootNode = nullptr;
-
+    //_currentNode = nullptr;
     // load image into heap memory
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
 }
 
-ChatBot::~ChatBot()
+ChatBot::~ChatBot() // 1 : destructor
 {
     std::cout << "ChatBot Destructor" << std::endl;
 
@@ -44,6 +44,91 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+
+// 2 : Copy Constructor
+ChatBot::ChatBot(const ChatBot &origin) // 2 : copy constructor
+{
+    
+    std::cout << "ChatBot Copy Constructor" << std::endl;
+    
+    // Copy all origin properties into local object properties for a full copy.
+    
+    //_image = origin._image; // I'm not very sure of the difference between creating a new wxBitmap object or just copying origin._image on local _image.
+    //can you please provide feedback on this?
+    _image = new wxBitmap(*origin._image);
+    _chatLogic = origin._chatLogic;
+    _rootNode = origin._rootNode;
+    _currentNode = origin._currentNode;
+    
+}
+
+// 3 : Copy Assignment Operator
+
+ChatBot &ChatBot::operator=(const ChatBot &origin)
+{
+    std::cout << "ChatBot Copy Assignment Operator" << std::endl;
+    if (this == &origin)
+        return *this;
+
+    delete _image;
+    //_image = new wxBitmap(*origin._image);
+    _image = origin._image;
+    _chatLogic = origin._chatLogic;
+    _rootNode = origin._rootNode;
+    _currentNode = origin._currentNode;
+     
+    return *this;
+}
+
+// 4 : Move constructor
+
+
+ChatBot::ChatBot(ChatBot &&origin)
+    
+{
+    
+    std::cout << "ChatBot Move Constructor" << std::endl;
+    _image = origin._image;
+    _chatLogic = origin._chatLogic;
+    _rootNode = origin._rootNode;
+    _currentNode = origin._currentNode;
+    
+    _chatLogic->SetChatbotHandle(this);
+
+    // set origin properties to nullptr.
+    origin._chatLogic = nullptr;
+    origin._rootNode = nullptr;
+    origin._currentNode = nullptr;
+    origin._image = nullptr;
+        
+        
+}
+
+// 5 : Move Assignment Operator
+
+
+ChatBot &ChatBot::operator=(ChatBot &&origin)
+{
+    std::cout << "ChatBot Move Assignment Operator" << std::endl;
+    if (this == &origin)
+        return *this;
+
+    delete _image; 
+    _image = origin._image;
+    _chatLogic = origin._chatLogic;
+    _rootNode = origin._rootNode;
+    _currentNode = origin._currentNode;
+
+    _chatLogic->SetChatbotHandle(this);
+
+    origin._image = nullptr;
+    origin._chatLogic = nullptr;
+    origin._rootNode = nullptr;
+    origin._currentNode = nullptr;
+
+    return *this;
+}
+
 
 ////
 //// EOF STUDENT CODE
